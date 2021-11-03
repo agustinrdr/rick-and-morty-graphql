@@ -1,0 +1,22 @@
+.loading-spinner{
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  height: 100%;
+  top: 57px;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+}
+
+.loading-spinner mat-spinner{
+  align-self: end;
+  margin-bottom: 1rem;
+}
+
+.loading-message{
+  text-align: center;
+  align-self: start;
+}
