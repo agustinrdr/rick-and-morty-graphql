@@ -13,7 +13,9 @@
       <mat-form-field class="d-flex" >
         <mat-label>Search</mat-label>
         <input matInput #searchInput placeholder="Search a character..." (keydown.enter)="lookUpCharacter()">
-        <button *ngIf="searchInput.value != ''" matSuffix mat-icon-button aria-label="Clear" (click)="lookUpCharacter(true);this.searchInput.value = ''">
+        <button *ngIf="searchInput.value != ''" matSuffix mat-icon-button aria-label="Clear"
+                (click)="lookUpCharacter(true);this.searchInput.value = ''"
+                (tap)="lookUpCharacter(true);this.searchInput.value = ''">
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>

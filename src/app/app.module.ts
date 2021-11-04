@@ -19,6 +19,8 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import { ErrorComponent } from './shared/error/error.component';
+import { UpdateDialogComponent } from './shared/update-dialog/update-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { ErrorComponent } from './shared/error/error.component';
     CharacterComponent,
     SpinnerComponent,
     NavbarComponent,
-    ErrorComponent
+    ErrorComponent,
+    UpdateDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { ErrorComponent } from './shared/error/error.component';
     MatPaginatorModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptorService, multi: true }],
   bootstrap: [AppComponent]
