@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1635993335693,
+  "timestamp": 1635993649689,
   "index": "/rick-and-morty-graphql/index.html",
   "assetGroups": [
     {
@@ -12,7 +12,7 @@
       },
       "urls": [
         "/rick-and-morty-graphql/index.html",
-        "/rick-and-morty-graphql/main.300c857d07b682473a82.js",
+        "/rick-and-morty-graphql/main.d81d276e60bf871b109b.js",
         "/rick-and-morty-graphql/manifest.webmanifest",
         "/rick-and-morty-graphql/polyfills.9b4ef03f7cf1c0ade6a9.js",
         "/rick-and-morty-graphql/runtime.27e3fdd55cb69fa3031b.js",
@@ -51,8 +51,8 @@
     "/rick-and-morty-graphql/assets/icons/256.png": "884cba41d3b8f633654706269fc7ccf4f8cf7c5b",
     "/rick-and-morty-graphql/assets/icons/512.png": "f719eb53e9e8d0bc2c0cc344456ef07454c35bfa",
     "/rick-and-morty-graphql/assets/icons/72.png": "b79aa50567b4d630de88e5431d8c75ab9665fb5e",
-    "/rick-and-morty-graphql/index.html": "97d59258fe64e0a88fb3c5b36c18974398bdc0ef",
-    "/rick-and-morty-graphql/main.300c857d07b682473a82.js": "1a1134d740bef0005d70e919c16c656d33768379",
+    "/rick-and-morty-graphql/index.html": "5f9856e1393f6c293278b0da526abcb5b0f366ae",
+    "/rick-and-morty-graphql/main.d81d276e60bf871b109b.js": "d9a00def6abcae8a4c613046c888d11a1d901bde",
     "/rick-and-morty-graphql/manifest.webmanifest": "5a3329a7867b6697524533df71c61513d46bc904",
     "/rick-and-morty-graphql/polyfills.9b4ef03f7cf1c0ade6a9.js": "a1a092f93d73e99e9c4676fee7609f2371f60dc9",
     "/rick-and-morty-graphql/runtime.27e3fdd55cb69fa3031b.js": "975f0fc68066014a0986cbba295b4dcc75b4ba24",
