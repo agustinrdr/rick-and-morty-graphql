@@ -14,6 +14,11 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
+import { ErrorComponent } from './shared/error/error.component';
 
 @NgModule({
   declarations: [
@@ -21,22 +26,27 @@ import { environment } from '../environments/environment';
     CharacterListComponent,
     CharacterComponent,
     SpinnerComponent,
-    NavbarComponent
+    NavbarComponent,
+    ErrorComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        GraphQLModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        MatProgressSpinnerModule,
-        ServiceWorkerModule.register('ngsw-worker.js', {
-          enabled: environment.production,
-          // Register the ServiceWorker as soon as the app is stable
-          // or after 30 seconds (whichever comes first).
-          registrationStrategy: 'registerWhenStable:30000'
-        })
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    GraphQLModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
+    MatPaginatorModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule
+  ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })

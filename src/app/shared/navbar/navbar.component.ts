@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {CharactersService} from "../../services/characters.service";
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('searchInput') searchInput!: ElementRef;
+
+  constructor(private charactersService: CharactersService) { }
 
   ngOnInit(): void {
+  }
+
+
+  lookUpCharacter(clear?: boolean){
+    if(clear) {
+      this.charactersService.setLookedUpCharacter('');
+    } else {
+      this.charactersService.setLookedUpCharacter(this.searchInput.nativeElement.value);
+    }
   }
 
 }

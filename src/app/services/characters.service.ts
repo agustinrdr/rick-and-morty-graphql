@@ -1,19 +1,31 @@
 import { Injectable } from '@angular/core';
 import {Apollo, gql} from "apollo-angular";
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CharactersService {
 
+  lookedUpCharacter: BehaviorSubject<String> = new BehaviorSubject<String>('');
+
   constructor(private apollo: Apollo) { }
 
-  getAll(): Observable<any> {
+  setLookedUpCharacter(character: String) {
+    this.lookedUpCharacter.next(character);
+  }
+
+  getAll(page: number | string = 1): Observable<any> {
     return this.apollo.watchQuery({
       query: gql`
         query {
-          characters {
+          characters(page: ${page}) {
+            info{
+              count,
+              pages,
+              next,
+              prev
+            },
             results {
               id,
               name,
@@ -37,10 +49,62 @@ export class CharactersService {
             name,
             location{
               name
-            }
+            },
+            origin{
+              name
+            },
+            gender
           }
         }
       `
     }).valueChanges;
+  }
+
+  searchCharacter(page?: number): Observable<any> {
+    if(page) {
+      return this.apollo.watchQuery({
+        query: gql`
+          query {
+            characters(page: ${page},filter: {name: "${this.lookedUpCharacter.getValue().toString()}"}) {
+              info{
+                count,
+                pages,
+                next,
+                prev
+              },
+              results {
+                id,
+                name,
+                status,
+                species,
+                image
+              }
+            }
+          }
+        `
+      }).valueChanges;
+    } else {
+      return this.apollo.watchQuery({
+        query: gql`
+          query {
+            characters(filter: {name: "${this.lookedUpCharacter.getValue().toString()}"}) {
+              info{
+                count,
+                pages,
+                next,
+                prev
+              },
+              results {
+                id,
+                name,
+                status,
+                species,
+                image
+              }
+            }
+          }
+        `
+      }).valueChanges;
+    }
   }
 }

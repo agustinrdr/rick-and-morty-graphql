@@ -3,7 +3,12 @@
     <img [src]="character?.image" alt="image">
     <div class="ms-4 w-100">
       <h1 class="text-center">{{character?.name}}</h1>
-      <span>Location: {{character?.location?.name}}</span>
+      <div class="d-flex align-items-center"><span class="material-icons">keyboard_double_arrow_right</span>
+        Location: {{character?.location?.name}}</div>
+      <div class="d-flex align-items-center"><span class="material-icons">keyboard_double_arrow_right</span>
+        Gender: {{character?.gender}}</div>
+      <div class="d-flex align-items-center"><span class="material-icons">keyboard_double_arrow_right</span>
+        Origin: {{character?.origin?.name}}</div>
     </div>
   </div>
 </div>

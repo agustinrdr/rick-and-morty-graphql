@@ -5,7 +5,7 @@ export interface Character {
   species: string
   type: string
   gender: string
-  origin: string
+  origin: Origin
   location: Location
   image: string
   episode: string
@@ -19,5 +19,9 @@ export interface CharacterResponse {
 }
 
 interface Location {
+  name: string
+}
+
+interface Origin {
   name: string
 }

@@ -1,15 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/">Navbar</a>
+    <a class="navbar-brand" routerLink="/"><img class="navbar-icon" src="assets/icons/512.png" alt="R&M"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/">Characters</a>
         </li>
       </ul>
+      <mat-form-field class="d-flex" >
+        <mat-label>Search</mat-label>
+        <input matInput #searchInput placeholder="Search a character..." (keydown.enter)="lookUpCharacter()">
+        <button *ngIf="searchInput.value != ''" matSuffix mat-icon-button aria-label="Clear" (click)="lookUpCharacter(true);this.searchInput.value = ''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
     </div>
   </div>
 </nav>

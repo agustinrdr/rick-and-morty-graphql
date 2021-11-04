@@ -1,17 +1,29 @@
 <div class="container">
+  <mat-paginator [length]="lenght"
+                 [pageSize]="pageSize"
+                 (page)="pageSelection($event)"
+                 [showFirstLastButtons]="true"
+                 aria-label="Select page">
+  </mat-paginator>
   <div class="row row-cols-1 row-cols-md-3 g-5 mx-auto">
     <div class="col" *ngFor="let character of characters">
       <div class="card" style="width: 18rem;">
         <img [src]="character.image" class="card-img-top" >
         <div class="card-body">
-          <h5 class="card-title">{{character.name}}</h5>
+          <h2 class="card-title">{{character.name}}</h2>
           <p class="card-text">Is alive? {{character.status == 'Alive' ? 'Yes':'No'}}</p>
-          <p class="card-text">Spicie {{character.species}}</p>
+          <p class="card-text">Spicie: {{character.species}}</p>
           <a [routerLink]="'/character/'+character.id" class="btn btn-primary">Details</a>
         </div>
       </div>
     </div>
   </div>
+  <mat-paginator [length]="lenght"
+                 [pageSize]="pageSize"
+                 (page)="pageSelection($event)"
+                 [showFirstLastButtons]="true"
+                 aria-label="Select page">
+  </mat-paginator>
 </div>
 
 
